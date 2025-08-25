@@ -1,19 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import StackRow from '../components/ui/StackRow'
 import { Image } from 'expo-image'
 import Ionicons from '@expo/vector-icons/Ionicons'
+import { useRouter } from 'expo-router'
+import Button from './ui/Button'
 
 
 export default function Header() {
+
+  const router = useRouter();
+
   return (
     <StackRow style={styles.header}>
-      <Image 
-        style={styles.avatar}
-        source={{uri: 'https://github.com/renancavichi.png'}}
-      />
-      <View style={styles.nav}>
-        <Ionicons name="menu" size={24} color="white" />
-      </View>
+      <Pressable onPress={() => {router.push('/profile')}}>
+        <Image
+          style={styles.avatar}
+          source={{ uri: 'https://github.com/renancavichi.png' }}
+        />
+      </Pressable>
+      <Button title="Contatos" onPress={() => {router.push('/contatos')}} />
     </StackRow>
   );
 }

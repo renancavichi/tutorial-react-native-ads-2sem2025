@@ -1,6 +1,7 @@
 import { StyleSheet, View, FlatList } from 'react-native';
 import Card from '../components/Card';
 import { useEffect, useState } from 'react';
+import Header from '../components/Header';
 
 export default function Home() {
 
@@ -24,7 +25,7 @@ export default function Home() {
         data={pokemons}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => <Card title={item.name} desc={item.url} />}
-        li
+        ListHeaderComponent={Header}
       />
     </View>
   );
@@ -35,7 +36,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#32be94ff',
     gap: 20,
-    paddingHorizontal: 20
   },
   content: {
     flex: 8,
