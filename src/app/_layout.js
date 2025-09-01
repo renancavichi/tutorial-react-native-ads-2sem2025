@@ -1,30 +1,23 @@
-import { Tabs } from 'expo-router'
-import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import AntDesign from '@expo/vector-icons/AntDesign';
+import { Stack } from 'expo-router';
 
-export default function TabLayout() {
+export default function StackLayout() {
   return (
-    <Tabs>
-      <Tabs.Screen name="index" options={{
+    <Stack>
+      <Stack.Screen name="index" options={{
             headerShown: false,
-            title: 'Pokedex',
-            tabBarIcon: ({color}) => <FontAwesome5 name="home" size={24} color={color} />
       }}/>
-      <Tabs.Screen name="profile" options={{
-            headerShown: false,
-            title: 'Perfil',
-            tabBarIcon: ({color}) => <FontAwesome name="user-circle-o" size={24} color={color} />
+      <Stack.Screen name="login" options={{
+            //headerShown: false,
+             title: 'Login',
+
       }}/>
-      <Tabs.Screen name="contatos" options={{
-            headerShown: false,
-            title: 'Contatos',
-            tabBarIcon: ({color}) => <AntDesign name="contacts" size={24} color={color} />
+      <Stack.Screen name="signup" options={{
+           // headerShown: false,
+            title: 'Cadastrar',
       }}/>
-      <Tabs.Screen name="_layout_StackExemplo" options={{
-            headerShown: false,
-            href: null,
+      <Stack.Screen name="(tabs)" options={{
+            headerShown: false
       }}/>
-    </Tabs>
+    </Stack>
   );
 }
