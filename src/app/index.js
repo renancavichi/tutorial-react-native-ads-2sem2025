@@ -1,16 +1,29 @@
-import { View, Text, StyleSheet } from "react-native";
-import Button from "../components/ui/Button";
-import { useRouter } from "expo-router";
+import { View, Text, StyleSheet, ActivityIndicator } from "react-native"
+import { useRouter } from "expo-router"
+import { useEffect } from "react"
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function Initializer() {
+    const router = useRouter()
 
-    const router = useRouter();
+    useEffect(() => {
+        const checkLoginStatus = async () => {
+            const loggedStatus = await AsyncStorage.getItem('isLogged')
+            if (loggedStatus) {
+                router.replace('/home')
+            }   else {
+                router.replace('/login')
+            }
+        }   
+        setTimeout(() => {
+            checkLoginStatus()
+        }, 2000);
+    }, [])
+
     return (
         <View style={styles.container}>
             <Text>Initializer</Text>
-            <Button title="Login" onPress={() => router.replace('/login')} />
-            <Button title="SignUp" onPress={() => router.replace('/signup')} />
-            <Button title="Home" onPress={() => router.replace('/home')} />
+            <ActivityIndicator size="large" color="#0000ff" />
         </View>
     )
 }

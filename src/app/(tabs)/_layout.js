@@ -5,7 +5,10 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function TabLayout() {
   return (
-    <Tabs>
+    <Tabs screenOptions={{
+        tabBarActiveTintColor: '#dc6510ff',
+        tabBarLabelStyle: { fontSize: 8 },
+      }}>
       <Tabs.Screen name="home" options={{
             headerShown: false,
             title: 'Pokedex',

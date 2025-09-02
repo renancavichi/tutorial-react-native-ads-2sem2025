@@ -7,4 +7,7 @@
 - Difereça entre ScrollView e Flatlist
 - Pasta app Expo Router (Navegação Baseada em Arquivos)
 - Tipos de Navegação Stack, Tabs, Drawer e Modal
-- useRouter (router.push)
+    - useRouter (router.push, router.replace)
+    - Link
+- Persistência de Dados com AsyncStorage (Async)
+    - setItem, getItem e removeItem

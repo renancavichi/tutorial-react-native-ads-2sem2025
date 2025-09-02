@@ -1,4 +1,4 @@
-import { Stack } from 'expo-router';
+import { Stack } from 'expo-router'
 
 export default function StackLayout() {
   return (
@@ -9,15 +9,15 @@ export default function StackLayout() {
       <Stack.Screen name="login" options={{
             //headerShown: false,
              title: 'Login',
-
       }}/>
       <Stack.Screen name="signup" options={{
            // headerShown: false,
+           presentation: 'modal',
             title: 'Cadastrar',
       }}/>
       <Stack.Screen name="(tabs)" options={{
             headerShown: false
       }}/>
     </Stack>
-  );
+  )
 }
