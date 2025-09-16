@@ -1,7 +1,7 @@
 # Tópicos Importantes
 
-- O que é React Native
-- O que é Expo
+- O que é React Native (Diferença React DOM)
+- O que é Expo (Framework + Ecosistema de Teste [Expo Go], Deploy)
 - Componente Básicos do React Native (View, Text, Stylesheet, Pressable, Button, Image, TextInput)
 - Expo Image (Mais formatos de imagens além de recursos de placeholder)
 - Difereça entre ScrollView e Flatlist
